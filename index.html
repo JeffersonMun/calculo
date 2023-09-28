@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora de Descuento</title>
+</head>
+<body>
+    <h1>Calculadora de Descuento</h1>
+    <p>Ingrese el monto:</p>
+    <input type="number" id="montoInput">
+    <button onclick="calcularDescuento()">Calcular Descuento</button>
+    <p>Descuento: <span id="descuento"></span></p>
+
+    <script>
+        function calcularDescuento() {
+            // Obtener el valor ingresado por el usuario
+            var monto = parseFloat(document.getElementById("montoInput").value);
+
+            // Verificar si el monto es mayor o igual a 100
+            if (monto >= 100) {
+                // Calcular el descuento del 10%
+                var descuento = monto * 0.10;
+            } else {
+                // Calcular el descuento del 2%
+                var descuento = monto * 0.02;
+            }
+
+            // Mostrar el descuento en la página
+            document.getElementById("descuento").textContent = descuento.toFixed(2) + " (USD)";
+        }
+    </script>
+</body>
+</html>
